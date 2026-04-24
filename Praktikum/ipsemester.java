@@ -10,7 +10,7 @@ public class ipsemester {
 
          double Bindo, DAM, SIM, MB, BD, PDA, SISDM, PDI;
          double sksBINDO = 2, sksDAM = 3, sksSIM = 2, sksMB = 3, sksBD = 3, sksPDA = 3, sksSISDM = 2, sksPDI = 2;
-         int totalSks;
+       int totalSks;
          
 
     System.out.println("Menghitung IP Semester");

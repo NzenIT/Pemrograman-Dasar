@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class array {
+public class tiketZoo {
  public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
 
