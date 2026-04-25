@@ -24,7 +24,7 @@ public static void main(String[] args) {
             case 1:
                 // Menu 1 >> Input Kategori dan harga bebas
 
-                System.out.print("Masukkan jumlah tiket : ");
+                System.out.print("Masukkan jumlah kategori : ");
                 jumlahData = input.nextInt();
 
                 input.nextLine();
