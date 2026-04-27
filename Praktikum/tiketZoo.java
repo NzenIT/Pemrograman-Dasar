@@ -78,7 +78,7 @@ public static void main(String[] args) {
                 break;
 
             case 3:
-                // Menu 3 >> Hitung total yang harus dibayar dan jumlah tiket yang dibeli
+                // Menu 3 >> Hitung total yang harus dibayar dari jumlah tiket yang dibeli
 
                 if (jumlahData == 0 || jumlahBeli.length == 0) {
                     System.out.println("Silakan input kategori, harga, dan jumlah beli terlebih dahulu.");
