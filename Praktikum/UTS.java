@@ -45,24 +45,35 @@ public class UTS {
                     break;
                 case 3:
                     // Hitung total kehadiran dan persentase
-                    totalKehadiran = 0;
-                    totalpertemuan = 0;
-                    for (int i = 0; i < jumlahPertemuan.length; i++) {
-                        totalKehadiran += jumlahPertemuan[i];
-                        totalpertemuan += 16; // pertemuan dalam satu semester adalah 16
+                
+          
+    if (namaMahasiswa.length == 0) {
+        System.out.println("Data belum diinput!");
+        break;
+    }
+
+                for (int i = 0; i < namaMahasiswa.length; i++) {
+                    int totalPertemuan = 16;
+                    int hadir = jumlahPertemuan[i];
+
+                    int persentase = (hadir * 100) / totalPertemuan;
+
+                    String status;
+                    if (persentase > 75) {
+                        status = "Baik";
+                    } else {
+                        status = "Kurang";
                     }
-                    if (namaMahasiswa.length > 0) {
-                        System.out.println("Nama: " + namaMahasiswa[0]);
-                         // Menampilkan nama mahasiswa pertama sebagai contoh
-                         System.out.print("Total Pertemuan: " + totalpertemuan);
-                        
-                        persentaseKehadiran = (totalKehadiran  / totalpertemuan * namaMahasiswa.length) * 100; // menghitung persentase kehadiran
-                        System.out.println();
-            
-                    }
-                    System.out.println("Total Kehadiran: " + totalKehadiran);
-                    System.out.println("Persentase Kehadiran: " + persentaseKehadiran + "%");
-                    break;
+
+                    System.out.println("Mahasiswa " + (i + 1));
+                    System.out.println("Nama: " + namaMahasiswa[i]);
+                    System.out.println("Kehadiran: " + hadir + " dari 16");
+                    System.out.println("Persentase: " + persentase + "%");
+                    System.out.println("Status: " + status);
+                    System.out.println("------------------------");
+                }
+                break;
+                
 
                         
                 case 4:
