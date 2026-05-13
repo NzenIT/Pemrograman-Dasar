@@ -59,7 +59,7 @@ public class UTS {
                     int persentase = (hadir * 100) / totalPertemuan;
 
                     String status;
-                    if (persentase > 75) {
+                    if (persentase >= 75) {
                         status = "Baik";
                     } else {
                         status = "Kurang";
