@@ -47,25 +47,25 @@ public class apkkalkulator {
     // Fungsi-fungsi (Methods) Kalkulator
     public static double penjumlahan(double a, double b) {
         double hasil = a + b;
-        System.out.println("Hasil :" +  a + " + " + b + " = " + hasil);
+        System.out.println("Hasil : " +  a + " + " + b + " = " + hasil);
         return hasil;
     }
 
     public static double pengurangan(double a, double b) {
         double hasil = a - b;
-        System.out.println("Hasil :" + a + " - " + b + " = " + hasil);  
+        System.out.println("Hasil : " + a + " - " + b + " = " + hasil);  
         return hasil;
     }
 
     public static double perkalian(double a, double b) {
         double hasil = a * b;
-        System.out.println("Hasil :" + a + " * " + b + " = " + hasil);
+        System.out.println("Hasil : " + a + " * " + b + " = " + hasil);
         return hasil;
     }
 
     public static double pembagian(double a, double b) {
         double hasil = a / b;
-        System.out.println("Hasil :" + a + " / " + b + " = " + hasil) ;
+        System.out.println("Hasil : " + a + " / " + b + " = " + hasil) ;
         return hasil;
     }
 }
