@@ -9,6 +9,7 @@ public class luaspersegipanjang {
 
         //Memanggil Fungsi harus di dalam void main
         //Membuat fungsi harus di luar void main
+        
         int panjang,lebar =0;
         System.out.print("Masukkan panjang (cm) : ");
         pj = input.nextInt();
