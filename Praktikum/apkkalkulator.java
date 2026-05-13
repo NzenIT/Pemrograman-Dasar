@@ -32,11 +32,7 @@ public class apkkalkulator {
                 hasil = perkalian(angka1, angka2);
                 break;
             case 4:
-                if (angka2 != 0) {
-                    hasil = pembagian(angka1, angka2);
-                } else {
-                    System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
-                }
+                hasil = pembagian(angka1, angka2);
                 break;
             default:
                 System.out.println("Pilihan tidak valid.");
