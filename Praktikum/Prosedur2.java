@@ -25,7 +25,7 @@ public class Prosedur2 {
     
     //procedure untuk menampilkan data barang dan total pembayaran
     static void outputData(String A, int B, int C) {
-        System.out.println("--------------------------------------");
+        System.out.println("--------------------------------------");  
         System.out.println("Nama Barang : " + A);
         System.out.println("Jumlah Barang : " + B);
         System.out.println("Harga Barang : Rp." + C);
