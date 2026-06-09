@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class NilaiAkhir {
-
+    //Pakai variabel global agar bisa dipakai di semua method
     static Scanner input = new Scanner(System.in);
     static String[] komponen = {
         "Tugas", "Kuis", "Praktikum",
@@ -16,6 +16,7 @@ public class NilaiAkhir {
     static double[] nilai = new double[7];
 
     
+    //Procedure untuk input nilai
     static void inputNilai() {
         for(int i = 0; i < nilai.length; i++) {
             System.out.print("Masukkan nilai " + komponen[i] + " : ");
@@ -23,6 +24,7 @@ public class NilaiAkhir {
         }
     }
 
+    //Function untuk menghitung nilai akhir
     static double hitungNilai() {
         double total = 0;
 
@@ -33,6 +35,7 @@ public class NilaiAkhir {
         return total;
     }
 
+    //Function untuk menghitung nilai huruf
     static char nilaiHuruf(double na) {
         if(na >= 85)
             return 'A';
@@ -48,12 +51,12 @@ public class NilaiAkhir {
 
     public static void main(String[] args) {
 
-        inputNilai();
+        inputNilai(); // Memanggil procedure untuk input nilai
 
-        double na = hitungNilai();
+        double na = hitungNilai(); // Memanggil function untuk menghitung nilai akhir
 
         System.out.println("------------------------------");
         System.out.println("Nilai Akhir : " + na);
-        System.out.println("Nilai Huruf : " + nilaiHuruf(na));
+        System.out.println("Nilai Huruf : " + nilaiHuruf(na)); // Memanggil function untuk menghitung nilai huruf
     }
 }
