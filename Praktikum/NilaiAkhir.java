@@ -3,22 +3,19 @@ import java.util.Scanner;
 public class NilaiAkhir {
 
     static Scanner input = new Scanner(System.in);
-
-    // Variabel Global
     static String[] komponen = {
         "Tugas", "Kuis", "Praktikum",
         "Kolaboratif", "Inovatif",
         "UTS", "UAS"
     };
-
     static double[] bobot = {
         0.15, 0.05, 0.20,
         0.10, 0.10,
         0.20, 0.20
     };
-
     static double[] nilai = new double[7];
 
+    
     static void inputNilai() {
         for(int i = 0; i < nilai.length; i++) {
             System.out.print("Masukkan nilai " + komponen[i] + " : ");
