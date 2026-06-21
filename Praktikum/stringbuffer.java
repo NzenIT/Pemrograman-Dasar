@@ -38,7 +38,7 @@ public class stringbuffer {
         System.out.println("Capacity : " + sb.capacity());
     }
 }
-*/
+
 
 public class stringbuffer {
     public static void main(String[] args) {
@@ -55,4 +55,4 @@ public class stringbuffer {
         System.out.println("Sama? " + teksAwal.equals(teksAkhir));
     }
 }
-
+*/
