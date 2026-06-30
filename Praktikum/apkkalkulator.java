@@ -37,7 +37,7 @@ public class apkkalkulator {
             default:
                 System.out.println("Pilihan tidak valid.");
         }
-
+        input.close();
     }
 
     // Fungsi-fungsi (Methods) Kalkulator
@@ -63,5 +63,6 @@ public class apkkalkulator {
         double hasil = a / b;
         System.out.println("Hasil : " + a + " / " + b + " = " + hasil) ;
         return hasil;
+
     }
 }

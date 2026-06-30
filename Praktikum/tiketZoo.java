@@ -105,7 +105,9 @@ public static void main(String[] args) {
             default:
                 System.out.println("Mohon maaf, Menu yang anda masukkan tidak valid.");
         }
+        input.close();
     } while (true);
+    
  }
     
 }

@@ -15,7 +15,7 @@ public class soallatihanfungsi {
        a = input.nextInt();
     
        isGanjil(a);
-
+        input.close();
     }
     static boolean isGanjil(int angka) {
         if (angka % 2 != 0){
@@ -26,7 +26,7 @@ public class soallatihanfungsi {
             return false; //angka genap
         }
 
-     
+         
         }
     }
 

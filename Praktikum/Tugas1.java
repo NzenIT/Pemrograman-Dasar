@@ -45,6 +45,7 @@ public class Tugas1 {
         System.out.println("Seribu : " + seribu);
         System.out.println("Dua ratus : " + duaRatus);
         System.out.println("Seratus : " + seratus);
+        input.close();
     }
     
 }

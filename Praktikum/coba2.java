@@ -7,8 +7,8 @@ public class coba2 {
         int usia;
         int jumlahPasien = 0;
 
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Masukkan usia pasien : ");
+        for (int i = 0; i < 2; i++) {
+            System.out.println("Masukkan usia pasien : ");
             usia = input.nextInt();
         
             if (usia <= 18) {
@@ -18,8 +18,8 @@ public class coba2 {
             }
             jumlahPasien++;
         } 
-        System.out.println("");
-        System.out.println("----- Pendaftaran Ditutup -----");
+       
+        System.out.print("\n----- Pendaftaran Ditutup -----\n");
         System.out.println("Total Pasien yang sudah terdaftar : " + jumlahPasien);
 
         input.close();

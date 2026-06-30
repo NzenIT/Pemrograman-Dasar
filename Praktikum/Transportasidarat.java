@@ -31,6 +31,7 @@ public class Transportasidarat {
         System.out.println("Minibus : " + minibus);
         System.out.println("Mobil : "  + mobil);
        
+        input.close();
     }
     
 }

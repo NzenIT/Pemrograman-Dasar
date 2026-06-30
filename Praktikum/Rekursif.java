@@ -10,7 +10,7 @@ public class Rekursif {
 
         System.out.println("Hasil Faktorial dari " + angka + " = " + faktorial(angka));
 
-        
+         input.close();
     }
     public static int faktorial(int n) {
         if (n == 1) { // kondisi berhenti base case
@@ -18,5 +18,6 @@ public class Rekursif {
         } else {
             return n * faktorial(n - 1); // Rekursif: n! = n * (n-1)!
         }
+
     }
 }
