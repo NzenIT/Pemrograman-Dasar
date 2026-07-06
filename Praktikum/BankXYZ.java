@@ -1,144 +1,127 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class BankXYZ {
 
-    static Scanner input = new Scanner(System.in);
-
-    // ArrayList untuk menyimpan data nasabah
+    static Scanner sc = new Scanner(System.in);
     static ArrayList<String> nama = new ArrayList<>();
-    static ArrayList<String> nik = new ArrayList<>();
-    static ArrayList<Double> saldo = new ArrayList<>();
+    static ArrayList<Integer> nik = new ArrayList<>();
+    static ArrayList<Integer> saldo = new ArrayList<>();
 
-    // PROCEDURE Tambah Nasabah
-    static void tambahNasabah() {
-        System.out.print("Masukkan Nama : ");
-        String n = input.nextLine();
+    public static void main(String[] args) {
+        int opsi;
 
-        System.out.print("Masukkan NIK  : ");
-        String k = input.nextLine();
+        do {
+            System.out.println("\n=== PERBANKAN XYZ ===");
+            System.out.println("1. Tambah Nasabah");
+            System.out.println("2. Update Saldo");
+            System.out.println("3. Blokir Nasabah");
+            System.out.println("4. Tampilkan Data");
+            System.out.println("5. Keluar");
+            System.out.print("Pilih menu : ");
+            opsi = sc.nextInt();
 
-        System.out.print("Masukkan Saldo Awal : ");
-        double s = input.nextDouble();
-        input.nextLine();
-
-        nama.add(n);
-        nik.add(k);
-        saldo.add(s);
-
-        System.out.println("Data nasabah berhasil ditambahkan.");
-    }
-
-    // FUNCTION Cari Index Nasabah berdasarkan NIK
-    static int cariNasabah(String cariNik) {
-        for (int i = 0; i < nik.size(); i++) {
-            if (nik.get(i).equals(cariNik)) {
-                return i;
+            switch (opsi) {
+                case 1:
+                    inputNasabah();
+                    break;
+                case 2:
+                    updateSaldo();
+                    break;
+                case 3:
+                    blokir();
+                    break;
+                case 4:
+                    tampilkanData();
+                    break;
+                case 5:
+                    out();
+                    break;
+                default:
+                    System.out.println("Menu tidak tersedia!");
             }
-        }
-        return -1;
+
+        } while (true);
     }
 
-    // PROCEDURE Update Saldo
-    static void updateSaldo() {
-        System.out.print("Masukkan NIK Nasabah : ");
-        String cariNik = input.nextLine();
+    public static void inputNasabah() {
+        System.out.print("Jumlah nasabah : ");
+        int jumlah = sc.nextInt();
+        sc.nextLine();
 
-        int index = cariNasabah(cariNik);
+        for (int i = 0; i < jumlah; i++) {
+            System.out.println("\nNasabah ke-" + (i + 1));
 
-        if (index != -1) {
-            System.out.print("Masukkan Saldo Baru : ");
-            double saldoBaru = input.nextDouble();
-            input.nextLine();
+            System.out.print("Nama  : ");
+            nama.add(sc.nextLine());
 
-            saldo.set(index, saldoBaru);
+            System.out.print("NIK   : ");
+            nik.add(sc.nextInt());
 
-            System.out.println("Saldo berhasil diperbarui.");
-        } else {
-            System.out.println("Nasabah tidak ditemukan.");
+            System.out.print("Saldo : ");
+            saldo.add(sc.nextInt());
+            sc.nextLine();
         }
+
+        System.out.println("Nasabah berhasil ditambahkan.");
     }
 
-    // PROCEDURE Blokir Akun
-    static void blokirAkun() {
-        System.out.print("Masukkan NIK Nasabah : ");
-        String cariNik = input.nextLine();
-
-        int index = cariNasabah(cariNik);
-
-        if (index != -1) {
-            nama.remove(index);
-            nik.remove(index);
-            saldo.remove(index);
-
-            System.out.println("Akun berhasil diblokir.");
-        } else {
-            System.out.println("Nasabah tidak ditemukan.");
-        }
-    }
-
-    // PROCEDURE Tampilkan Data
-    static void tampilData() {
-        if (nama.size() == 0) {
+    public static void updateSaldo() {
+        if (nama.isEmpty()) {
             System.out.println("Belum ada data nasabah.");
             return;
         }
 
-        System.out.println("\n===== DATA NASABAH =====");
-        for (int i = 0; i < nama.size(); i++) {
-            System.out.println("Nasabah ke-" + (i + 1));
-            System.out.println("Nama  : " + nama.get(i));
-            System.out.println("NIK   : " + nik.get(i));
-            System.out.println("Saldo : Rp " + saldo.get(i));
-            System.out.println("---------------------");
+        tampilkanData();
+
+        System.out.print("Pilih nomor nasabah : ");
+        int pilih = sc.nextInt() - 1;
+
+        if (pilih >= 0 && pilih < nama.size()) {
+            System.out.print("Saldo baru : ");
+            saldo.set(pilih, sc.nextInt());
+            System.out.println("Saldo berhasil diperbarui.");
+        } else {
+            System.out.println("Nomor nasabah tidak valid.");
         }
     }
 
-    // PROCEDURE Menu
-    static void menu() {
-        System.out.println("\n===== BANK XYZ =====");
-        System.out.println("1. Tambah Nasabah");
-        System.out.println("2. Update Saldo Nasabah");
-        System.out.println("3. Blokir Akun Nasabah");
-        System.out.println("4. Tampilkan Seluruh Data Nasabah");
-        System.out.println("5. Keluar");
-        System.out.print("Pilih Menu : ");
+    public static void blokir() {
+        if (nama.isEmpty()) {
+            System.out.println("Belum ada data nasabah.");
+            return;
+        }
+
+        tampilkanData();
+
+        System.out.print("Pilih nomor nasabah : ");
+        int pilih = sc.nextInt() - 1;
+
+        if (pilih >= 0 && pilih < nama.size()) {
+            System.out.println("Nasabah " + nama.get(pilih) + " berhasil diblokir.");
+
+            nama.remove(pilih);
+            nik.remove(pilih);
+            saldo.remove(pilih);
+        } else {
+            System.out.println("Nomor nasabah tidak valid.");
+        }
     }
 
-    public static void main(String[] args) {
+    public static void tampilkanData() {
+        if (nama.isEmpty()) {
+            System.out.println("Data nasabah kosong.");
+            return;
+        }
 
-        int pilih;
+        System.out.println("\n=== DAFTAR NASABAH ===");
+        for (int i = 0; i < nama.size(); i++) {
+            System.out.println((i + 1) + ". " + nama.get(i)
+                    + " | " + nik.get(i)
+                    + " | " + saldo.get(i));
+        }
+    }
 
-        do {
-            menu();
-            pilih = input.nextInt();
-            input.nextLine();
-
-            switch (pilih) {
-                case 1:
-                    tambahNasabah();
-                    break;
-
-                case 2:
-                    updateSaldo();
-                    break;
-
-                case 3:
-                    blokirAkun();
-                    break;
-
-                case 4:
-                    tampilData();
-                    break;
-
-                case 5:
-                    System.out.println("Terima kasih.");
-                    break;
-
-                default:
-                    System.out.println("Menu tidak tersedia.");
-            }
-
-        } while (pilih != 5);
+    public static void out() {
+        System.out.println("Terima kasih telah menggunakan Bank XYZ.");
     }
 }
